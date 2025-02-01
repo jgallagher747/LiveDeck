@@ -3,8 +3,10 @@ echo "assets/
 assets/*.png
 assets/.DS_Store
 assets/*.otf
-config/*.json
 __pycache__/
 .vscode/
 *.log
 *.pyc" > .gitignore.DS_Store
+*.DS_Store
+.DS_Store
+config/.DS_Store
