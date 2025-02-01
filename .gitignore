@@ -3,4 +3,4 @@ __pycache__/
 *.log
 *.pyc
 config/*.json
-assets/*.png
+assets/*.png.DS_Store
