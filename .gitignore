@@ -1,7 +1,10 @@
+echo "assets/
+!assets/.keep
+assets/*.png
+assets/.DS_Store
+assets/*.otf
+config/*.json
 __pycache__/
 .vscode/
 *.log
-*.pyc
-config/*.json
-assets/*.png.DS_Store
-__pycache__/
+*.pyc" > .gitignore
