@@ -1,0 +1,11 @@
+{
+    "streamdeck": {
+        "brightness": 50,
+        "stop_button_index": -1
+    },
+    "paths": {
+        "font": "assets/DepartureMono-Regular.otf",
+        "default_image": "assets/default.png",
+        "stop_icon": "assets/stop.png"
+    }
+}
