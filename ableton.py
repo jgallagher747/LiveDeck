@@ -1,71 +1,64 @@
 # --- ableton.py ---
+import logging
 from live import Set
 from pythonosc import udp_client
 
+# Setup logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+
 # Initialize Ableton Live connection
-ableton_set = Set(scan=True)  # Scan the current Ableton project
+ableton_set = Set(scan=True)
 
-# Configure OSC client to send commands to the Max for Live OSC monitor device.
-# The Max for Live OSC monitor is now on a return track.
-OSC_IP = "127.0.0.1"  # Typically localhost
-OSC_PORT = 8000       # Use the port that your Max for Live OSC monitor is listening on
-
+# Configure OSC client
+OSC_IP = "127.0.0.1"
+OSC_PORT = 8000
 osc_client = udp_client.SimpleUDPClient(OSC_IP, OSC_PORT)
 
+
 def send_reset_osc():
-    """
-    Sends an OSC message to the Max for Live OSC monitor device to reset the playhead.
-    """
+    """Sends an OSC message to reset the playhead."""
     osc_client.send_message("/reset", 0)
-    print("Sent OSC reset command to Max for Live.")
+    logging.info("Sent OSC reset command to Max for Live.")
 
 
 def play_track(track_index):
-    """
-    Plays a specific track in Ableton by first sending an OSC command
-    to reset the playhead, then unsoloing all tracks, soloing the selected track,
-    and starting playback.
-    """
-    send_reset_osc()  # Reset the playhead via OSC command
-
-    # Un-solo all tracks first.
-    for track in ableton_set.tracks:
-        track.solo = False  
-
-    if 0 <= track_index < len(ableton_set.tracks):
+    """Plays a specific track in Ableton."""
+    send_reset_osc()
+    
+    try:
         track = ableton_set.tracks[track_index]
-        track.solo = True  # Solo the selected track
+    except IndexError:
+        logging.error(f"Invalid track index: {track_index}")
+        return
+    
+    for t in ableton_set.tracks:
+        if t.solo:
+            t.solo = False
+    
+    track.solo = True
+    
+    if track.clips:
+        clip = track.clips[0]
+        if clip:
+            try:
+                clip.play()
+                logging.info(f"Playing: {track.name}")
+            except Exception as e:
+                logging.error(f"Error playing clip on '{track.name}': {e}")
 
-        if track.clips and len(track.clips) > 0:
-            clip = track.clips[0]
-            if clip is not None:
-                try:
-                    clip.play()  # Play the first clip of the track.
-                    print(f"Playing: {track.name}")
-                except Exception as e:
-                    print(f"Error playing clip on track '{track.name}': {e}")
-            else:
-                print(f"Track '{track.name}' has an invalid clip (None).")
-        else:
-            print(f"Track '{track.name}' has no clips to play.")
-    else:
-        print(f"Invalid track index: {track_index}")
 
 def stop_all():
-    """
-    Stops all playback in Ableton Live by iterating over each track and clip.
-    """
+    """Stops all playback in Ableton Live via OSC."""
+    osc_client.send_message("/stop", 0)  # Ensure this is still included
+    logging.info("Sent OSC stop command to Max for Live.")
+
     for track in ableton_set.tracks:
-        if track.clips:
-            none_encountered = False
-            for clip in track.clips:
-                if clip is None:
-                    none_encountered = True
-                    continue
+        if not track.clips:
+            continue  # Skip tracks with no clips
+        for clip in track.clips:
+            if clip:
                 try:
                     clip.stop()
                 except Exception as e:
-                    print(f"Error stopping clip on track '{track.name}': {e}")
-            if none_encountered:
-                print(f"Warning: Some clips on track '{track.name}' were invalid and skipped.")
-    print("All playback stopped.")
+                    logging.error(f"Error stopping clip on '{track.name}': {e}")
+    logging.info("All playback stopped.")

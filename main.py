@@ -1,12 +1,12 @@
-from streamdeck import initialize_streamdeck
+# --- main.py ---
 import time
 import os
+from streamdeck import initialize_streamdeck
 
-# Get the script's actual location (the PyLive project root)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Force the script to use the correct working directory
+# Get the script's actual location (the LiveDeck project root)
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 os.chdir(BASE_DIR)
+
 
 def main():
     """
@@ -16,9 +16,8 @@ def main():
     if not deck:
         print("Stream Deck initialization failed. Exiting.")
         return
-
+    
     print("Stream Deck initialized. Listening for button events...")
-
     try:
         while True:
             time.sleep(1)  # Keep script running efficiently
@@ -26,6 +25,7 @@ def main():
         print("\nShutting down Stream Deck...")
         deck.reset()
         deck.close()
+
 
 if __name__ == "__main__":
     main()
