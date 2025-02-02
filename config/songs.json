@@ -27,6 +27,34 @@
             "album": "Album D",
             "image": "assets/song_four.png",
             "ableton_track": 3
+        },
+        {
+            "id": 5,
+            "title": "Song Five",
+            "album": "Album E",
+            "image": "assets/song_five.png",
+            "ableton_track": 4
+        },
+        {
+            "id": 6,
+            "title": "Song Six",
+            "album": "Album F",
+            "image": "assets/song_six.png",
+            "ableton_track": 5
+        },
+        {
+            "id": 7,
+            "title": "Song Seven",
+            "album": "Album G",
+            "image": "assets/song_seven.png",
+            "ableton_track": 6
+        },
+        {
+            "id": 8,
+            "title": "Song Eight",
+            "album": "Album H",
+            "image": "assets/song_eight.png",
+            "ableton_track": 7
         }
     ]
 }
