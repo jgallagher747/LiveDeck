@@ -1,6 +1,7 @@
 import os
 import json
 import logging
+import time
 from PIL import Image, ImageDraw, ImageFont
 from StreamDeck.ImageHelpers import PILHelper
 from ableton import play_track, stop_all
@@ -118,6 +119,7 @@ class Controller:
             if song_index < len(self.song_data):
                 song = self.song_data[song_index]
                 logging.info("Playing song: %s", song.get("title", "Unknown"))
+                stop_all()
                 play_track(song.get("ableton_track"))
                 self.update_buttons(deck)
 
