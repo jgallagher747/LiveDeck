@@ -32,6 +32,7 @@ class Controller:
         self.song_data = load_json(SONG_DB_PATH).get("songs", [])
         self.current_page = 0
         logging.info("Loaded song data: %s", json.dumps(self.song_data, indent=2))
+        self.artwork_path = "assets/artwork"  # Update from "artwork" if it exists
 
     def render_button(self, deck, song):
         """Generate a button image for a song."""

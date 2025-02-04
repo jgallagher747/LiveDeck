@@ -9,6 +9,11 @@ FONT_PATH = os.path.join(BASE_DIR, "assets", "DepartureMono-Regular.otf")
 STOP_ICON_PATH = os.path.join(BASE_DIR, "assets", "stop.png")
 STREAMDECK_BRIGHTNESS = 50
 
+DEFAULT_PATHS = {
+    'artwork': 'assets/artwork',
+    'default_image': 'assets/artwork/default.png'
+}
+
 
 def load_json(filepath, default=None):
     """Loads a JSON file and returns its content."""

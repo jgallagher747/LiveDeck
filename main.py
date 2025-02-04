@@ -7,6 +7,12 @@ from streamdeck import initialize_streamdeck
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 os.chdir(BASE_DIR)
 
+# Update any direct artwork path references
+ARTWORK_PATH = "assets/artwork"  # Update from "artwork" if it exists
+
+def init():
+    os.makedirs(ARTWORK_PATH, exist_ok=True)
+    # ... rest of initialization ...
 
 def main():
     """

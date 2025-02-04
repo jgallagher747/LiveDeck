@@ -2,6 +2,7 @@
 import logging
 from live import Set
 from pythonosc import udp_client
+import os
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -62,3 +63,15 @@ def stop_all():
                 except Exception as e:
                     logging.error(f"Error stopping clip on '{track.name}': {e}")
     logging.info("All playback stopped.")
+
+
+class AbletonInterface:
+    def __init__(self):
+        self.artwork_path = "assets/artwork"  # Update from "artwork" if it exists
+        
+    def get_track_artwork(self, track_name):
+        # If there's any artwork handling, update the paths
+        artwork_file = os.path.join(self.artwork_path, f"{track_name}.png")
+        # ... rest of the method ...
+
+    # ... rest of the class ...

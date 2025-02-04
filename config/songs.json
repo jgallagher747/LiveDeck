@@ -2,58 +2,58 @@
     "songs": [
         {
             "id": 1,
-            "title": "Song One",
-            "album": "Album A",
-            "image": "assets/song_one.png",
+            "title": "Lean On Me",
+            "album": "The Best Of Bill Withers: Lean On Me",
+            "image": "assets/artwork/Lean On Me.jpg",
             "ableton_track": 0
         },
         {
             "id": 2,
-            "title": "Song Two",
-            "album": "Album B",
-            "image": "assets/song_two.png",
+            "title": "Holy (feat. Chance the Rapper)",
+            "album": "Holy (feat. Chance the Rapper) - Single",
+            "image": "assets/artwork/Holy (feat. Chance the Rapper) - Single.jpg",
             "ableton_track": 1
         },
         {
             "id": 3,
-            "title": "Song Three",
-            "album": "Album C",
-            "image": "assets/song_three.png",
+            "title": "Gratitude",
+            "album": "House of Miracles",
+            "image": "assets/artwork/Gratitude.jpg",
             "ableton_track": 2
         },
         {
             "id": 4,
-            "title": "Song Four",
-            "album": "Album D",
-            "image": "assets/song_four.png",
+            "title": "Smile",
+            "album": "Smile - Single",
+            "image": "assets/artwork/Smile.jpg",
             "ableton_track": 3
         },
         {
             "id": 5,
-            "title": "Song Five",
-            "album": "Album E",
-            "image": "assets/song_five.png",
+            "title": "Burn",
+            "album": "Trouble",
+            "image": "assets/artwork/Burn.jpg",
             "ableton_track": 4
         },
         {
             "id": 6,
-            "title": "Song Six",
-            "album": "Album F",
-            "image": "assets/song_six.png",
+            "title": "One Lovely Day",
+            "album": "One Lovely Day",
+            "image": "assets/artwork/One Lovely Day.jpg",
             "ableton_track": 5
         },
         {
             "id": 7,
-            "title": "Song Seven",
-            "album": "Album G",
-            "image": "assets/song_seven.png",
+            "title": "Banana Pancakes",
+            "album": "In Between Dreams",
+            "image": "assets/artwork/Banana Pancakes.jpg",
             "ableton_track": 6
         },
         {
             "id": 8,
             "title": "Song Eight",
             "album": "Album H",
-            "image": "assets/song_eight.png",
+            "image": "assets/artwork/song_eight.png",
             "ableton_track": 7
         }
     ]

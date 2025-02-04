@@ -1,0 +1,44 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "title": "Holy",
+      "album": "Holy (feat. Chance the Rapper) - Single",
+      "artist": "Justin Bieber",
+      "image": "artwork/holy.png",
+      "ableton_track": 1
+    },
+    {
+      "id": 2,
+      "title": "Gratitude",
+      "album": "Gratitude",
+      "artist": "Gratitude",
+      "image": "artwork/gratitude.png",
+      "ableton_track": 2
+    },
+    {
+      "id": 3,
+      "title": "Smile",
+      "album": "Bohemian Rhapsody (The Original Soundtrack)",
+      "artist": "Smile",
+      "image": "artwork/smile.png",
+      "ableton_track": 3
+    },
+    {
+      "id": 4,
+      "title": "Burn",
+      "album": "Dreams and Nightmares (Deluxe Version)",
+      "artist": "Meek Mill",
+      "image": "artwork/burn.png",
+      "ableton_track": 4
+    },
+    {
+      "id": 5,
+      "title": "8-Audio",
+      "album": "Red - Single",
+      "artist": "8audio",
+      "image": "artwork/8-audio.png",
+      "ableton_track": 7
+    }
+  ]
+}
