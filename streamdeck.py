@@ -19,31 +19,57 @@ SONG_DATA = load_json(SONG_DB_PATH, {"songs": []})
 
 def close_streamdeck_app():
     """Close the StreamDeck application if it's running"""
-    # Very specific StreamDeck process names
-    streamdeck_names = {
-        'Stream Deck',  # macOS app name
-        'StreamDeck',   # Windows app name
-        'streamdeck'    # Linux app name
-    }
+    streamdeck_processes = [
+        'Stream Deck',
+        'crashpad_handler',
+        'termination_handler',
+        'QtWebEngineProcess',
+        'node20',
+        'se.trevligaspel.midi'
+    ]
     terminated = False
 
-    for proc in psutil.process_iter(['pid', 'name']):
+    logging.info("Starting StreamDeck app termination...")
+    
+    # First attempt to kill all StreamDeck-related processes
+    for proc in psutil.process_iter(['pid', 'name', 'exe']):
         try:
-            # Get process name and ensure it's a string
             proc_name = str(proc.info['name']).strip()
+            proc_exe = str(proc.info.get('exe', '')).strip()
             
-            # Exact match only
-            if proc_name in streamdeck_names:
-                logging.info(f"Found StreamDeck app: {proc_name} (PID: {proc.pid})")
+            # Check if it's a StreamDeck-related process
+            if any(name in proc_name for name in streamdeck_processes) or \
+               'Elgato Stream Deck.app' in proc_exe:
+                logging.info(f"Terminating: {proc_name} (PID: {proc.pid})")
                 proc.terminate()
+                try:
+                    proc.wait(timeout=3)
+                except psutil.TimeoutExpired:
+                    logging.info(f"Force killing: {proc_name}")
+                    proc.kill()  # Force kill if terminate doesn't work
                 terminated = True
-                logging.info(f"Terminated StreamDeck app process")
+                
         except (psutil.NoSuchProcess, psutil.AccessDenied) as e:
-            logging.debug(f"Process access error: {e}")
+            logging.error(f"Error with process {proc_name}: {e}")
             continue
 
-    if terminated:
-        time.sleep(1)  # Reduced wait time
+    if not terminated:
+        logging.warning("No StreamDeck processes found to terminate")
+    else:
+        # Give extra time for all processes to fully terminate
+        time.sleep(2)
+        
+    # Double check no StreamDeck processes are left
+    for proc in psutil.process_iter(['pid', 'name', 'exe']):
+        try:
+            if 'Stream Deck' in proc.info['name'] or 'Elgato Stream Deck.app' in str(proc.info.get('exe', '')):
+                logging.warning(f"StreamDeck process still running: {proc.info['name']} (PID: {proc.pid})")
+                proc.kill()  # Force kill any remaining processes
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            pass
+    
+    # Final wait to ensure everything is closed
+    time.sleep(1)
 
 
 def initialize_streamdeck():

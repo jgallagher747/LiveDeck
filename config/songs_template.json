@@ -1,0 +1,19 @@
+{
+    "songs": [
+        {
+            "id": 1,
+            "title": "Lean On Me",
+            "album": "The Best Of Bill Withers: Lean On Me",
+            "image": "assets/artwork/Lean On Me.jpg",
+            "ableton_track": 0
+        },
+        {
+            "id": 2,
+            "title": "Holy (feat. Chance the Rapper)",
+            "album": "Holy (feat. Chance the Rapper) - Single",
+            "image": "assets/artwork/Holy (feat. Chance the Rapper) - Single.jpg",
+            "ableton_track": 1
+        }
+        // ... more songs ...
+    ]
+  }

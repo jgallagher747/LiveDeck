@@ -68,7 +68,7 @@ class AbletonConnection:
             subprocess.Popen(['open', set_path])
             
             # Quick check for first 3 seconds
-            for _ in range(3):
+            for _ in range(5):
                 if self.is_ableton_running():
                     self.is_connected = True
                     logging.info("Ableton Live launched successfully")

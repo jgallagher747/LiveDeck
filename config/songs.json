@@ -1,60 +1,84 @@
 {
-    "songs": [
-        {
-            "id": 1,
-            "title": "Lean On Me",
-            "album": "The Best Of Bill Withers: Lean On Me",
-            "image": "assets/artwork/Lean On Me.jpg",
-            "ableton_track": 0
-        },
-        {
-            "id": 2,
-            "title": "Holy (feat. Chance the Rapper)",
-            "album": "Holy (feat. Chance the Rapper) - Single",
-            "image": "assets/artwork/Holy (feat. Chance the Rapper) - Single.jpg",
-            "ableton_track": 1
-        },
-        {
-            "id": 3,
-            "title": "Gratitude",
-            "album": "House of Miracles",
-            "image": "assets/artwork/Gratitude.jpg",
-            "ableton_track": 2
-        },
-        {
-            "id": 4,
-            "title": "Smile",
-            "album": "Smile - Single",
-            "image": "assets/artwork/Smile.jpg",
-            "ableton_track": 3
-        },
-        {
-            "id": 5,
-            "title": "Burn",
-            "album": "Trouble",
-            "image": "assets/artwork/Burn.jpg",
-            "ableton_track": 4
-        },
-        {
-            "id": 6,
-            "title": "One Lovely Day",
-            "album": "One Lovely Day",
-            "image": "assets/artwork/One Lovely Day.jpg",
-            "ableton_track": 5
-        },
-        {
-            "id": 7,
-            "title": "Banana Pancakes",
-            "album": "In Between Dreams",
-            "image": "assets/artwork/Banana Pancakes.jpg",
-            "ableton_track": 6
-        },
-        {
-            "id": 8,
-            "title": "Song Eight",
-            "album": "Album H",
-            "image": "assets/artwork/song_eight.png",
-            "ableton_track": 7
-        }
-    ]
-}
+  "songs": [
+    {
+      "id": 1,
+      "title": "Lean On Me",
+      "artist": "Bill Withers",
+      "album": "The Best Of Bill Withers: Lean On Me",
+      "image": "assets/artwork/Lean On Me.jpg",
+      "ableton_track": 0
+    },
+    {
+      "id": 2,
+      "title": "Holy (feat. Chance the Rapper)",
+      "artist": "Justin Bieber",
+      "album": "Holy (feat. Chance the Rapper) - Single",
+      "image": "assets/artwork/Holy (feat. Chance the Rapper) - Single.jpg",
+      "ableton_track": 1
+    },
+    {
+      "id": 3,
+      "title": "Gratitude",
+      "artist": "Brandon Lake",
+      "album": "House of Miracles",
+      "image": "assets/artwork/Gratitude.jpg",
+      "ableton_track": 2
+    },
+    {
+      "id": 4,
+      "title": "Smile",
+      "artist": "Morgan Wallen",
+      "album": "Smile - Single",
+      "image": "assets/artwork/Smile.jpg",
+      "ableton_track": 3
+    },
+    {
+      "id": 5,
+      "title": "Burn",
+      "artist": "Ray LaMontagne",
+      "album": "Trouble",
+      "image": "assets/artwork/Burn.jpg",
+      "ableton_track": 4
+    },
+    {
+      "id": 6,
+      "title": "One Lovely Day",
+      "artist": "Citizen Cope",
+      "album": "One Lovely Day",
+      "image": "assets/artwork/One Lovely Day.jpg",
+      "ableton_track": 5
+    },
+    {
+      "id": 7,
+      "title": "Banana Pancakes",
+      "artist": "Jack Johnson",
+      "album": "In Between Dreams",
+      "image": "assets/artwork/Banana Pancakes.jpg",
+      "ableton_track": 6
+    },
+    {
+      "id": 8,
+      "title": "Take Me Home, Country Roads (Original Version)",
+      "artist": "John Denver",
+      "album": "Poems, Prayers & Promises",
+      "image": "assets/artwork/Take Me Home, Country Roads (Original Version).jpg",
+      "ableton_track": 7
+    },
+    {
+      "id": 9,
+      "title": "Here Comes the Sun",
+      "artist": "The Beatles",
+      "album": "Abbey Road (Remastered)",
+      "image": "assets/artwork/Here Comes the Sun.jpg",
+      "ableton_track": 8
+    },
+    {
+      "id": 10,
+      "title": "Neon (Live)",
+      "artist": "John Mayer",
+      "album": "Where the Light Is: John Mayer Live in Los Angeles",
+      "image": "assets/artwork/Neon (Live).jpg",
+      "ableton_track": 9
+    }
+  ]
+} 
