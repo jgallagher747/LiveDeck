@@ -79,6 +79,94 @@
       "album": "Where the Light Is: John Mayer Live in Los Angeles",
       "image": "assets/artwork/Neon (Live).jpg",
       "ableton_track": 9
+    },
+    {
+      "id": 11,
+      "title": "Don't Think Twice, It's All Right",
+      "artist": "Bob Dylan",
+      "album": "The Freewheelin' Bob Dylan",
+      "image": "assets/artwork/Don't Think Twice, It's All Right.jpg",
+      "ableton_track": 10
+    },
+    {
+      "id": 12,
+      "title": "I Will Wait",
+      "artist": "Mumford & Sons",
+      "album": "Babel (Deluxe Version)",
+      "image": "assets/artwork/I Will Wait.jpg",
+      "ableton_track": 11
+    },
+    {
+      "id": 13,
+      "title": "I'm Yours",
+      "artist": "Jason Mraz",
+      "album": "I'm Yours",
+      "image": "assets/artwork/I'm Yours.jpg",
+      "ableton_track": 12
+    },
+    {
+      "id": 14,
+      "title": "Something",
+      "artist": "The Beatles",
+      "album": "Abbey Road (Remastered)",
+      "image": "assets/artwork/Something.jpg",
+      "ableton_track": 13
+    },
+    {
+      "id": 15,
+      "title": "The Sound of Silence",
+      "artist": "Simon & Garfunkel",
+      "album": "Sound of Silence",
+      "image": "assets/artwork/The Sound of Silence.jpg",
+      "ableton_track": 14
+    },
+    {
+      "id": 16,
+      "title": "Ain't No Sunshine",
+      "artist": "Bill Withers",
+      "album": "Just As I Am",
+      "image": "assets/artwork/Ain't No Sunshine.jpg",
+      "ableton_track": 15
+    },
+    {
+      "id": 17,
+      "title": "Don't Panic",
+      "artist": "Coldplay",
+      "album": "Parachutes",
+      "image": "assets/artwork/Don't Panic.jpg",
+      "ableton_track": 16
+    },
+    {
+      "id": 18,
+      "title": "Chicago",
+      "artist": "Sufjan Stevens",
+      "album": "Illinois",
+      "image": "assets/artwork/Chicago.jpg",
+      "ableton_track": 17
+    },
+    {
+      "id": 19,
+      "title": "Karma",
+      "artist": "AJR",
+      "album": "Neotheater",
+      "image": "assets/artwork/Karma.jpg",
+      "ableton_track": 18
+    },
+    {
+      "id": 20,
+      "title": "Norwegian Wood (This Bird Has Flown)",
+      "artist": "The Beatles",
+      "album": "Rubber Soul",
+      "image": "assets/artwork/Norwegian Wood (This Bird Has Flown).jpg",
+      "ableton_track": 19
+    },
+    {
+      "id": 21,
+      "title": "Blackbird",
+      "artist": "The Beatles",
+      "album": "The Beatles (The White Album)",
+      "image": "assets/artwork/Blackbird.jpg",
+      "ableton_track": 20
     }
   ]
 } 
