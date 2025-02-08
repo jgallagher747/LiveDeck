@@ -31,18 +31,6 @@ def main():
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
-    # #Convert all jpg to png
-    # source_dir = os.path.join(BASE_DIR, "assets", "artwork")
-    # target_dir = os.path.join(BASE_DIR, "assets", "artwork", "artwork_png")
-
-    # logging.basicConfig(
-    #     level=logging.INFO,
-    #     format='%(asctime)s - %(levelname)s - %(message)s'
-    # )
-    # logging.info("Converting images to PNG...")
-    # convert_to_png(source_dir, target_dir)
-
-    # logging.info("Finished conversion. Starting LiveDeck application...")
 
     # Launch and connect to Ableton
     logging.info("Initializing Ableton Live...")
