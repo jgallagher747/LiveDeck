@@ -42,9 +42,13 @@ class Controller:
             icon = Image.open(icon_path)
         except FileNotFoundError:
             logging.warning("Image not found: %s, using default.", icon_path)
-            icon = Image.new("RGB", key_size, (0, 0, 0))
+            icon = Image.new("RGBA", key_size, (0, 0, 0, 0))
+        # draw button icon
         image = PILHelper.create_scaled_key_image(deck, icon)
         draw = ImageDraw.Draw(image)
+        # draw button rectangle
+        draw.rectangle((0,64,96,96), fill=(0,0,0))
+        # draw button text
         font_path = os.path.join(BASE_DIR, "assets", "DepartureMono-Regular.otf")
         font = ImageFont.truetype(font_path, 14)
         draw.text((image.width / 2, image.height - 10), song.get("title", ""),
@@ -69,7 +73,7 @@ class Controller:
                 song = self.song_data[song_index]
                 native_img = self.render_button(deck, song)
             else:
-                placeholder = Image.new("RGB", key_size, (50, 50, 50))
+                placeholder = Image.new("RGBA", key_size, (50, 50, 50))
                 scaled = PILHelper.create_scaled_key_image(deck, placeholder)
                 native_img = PILHelper.to_native_key_format(deck, scaled)
             deck.set_key_image(key, native_img)
@@ -79,7 +83,7 @@ class Controller:
         try:
             stop_icon = Image.open(stop_icon_path)
         except FileNotFoundError:
-            stop_icon = Image.new("RGB", key_size, (255, 0, 0))
+            stop_icon = Image.new("RGBA", key_size, (255, 0, 0))
         scaled = PILHelper.create_scaled_key_image(deck, stop_icon)
         native_img = PILHelper.to_native_key_format(deck, scaled)
         deck.set_key_image(Controller.STOP_BUTTON_INDEX, native_img)

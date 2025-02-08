@@ -171,4 +171,4 @@ class AbletonInterface:
         
     def get_track_artwork(self, track_name):
         # If there's any artwork handling, update the paths
-        artwork_file = os.path.join(self.artwork_path, f"{track_name}.png")
+        artwork_file = os.path.join(self.artwork_path, f"{track_name}.jpg")

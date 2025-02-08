@@ -73,4 +73,4 @@ def create_page_status_icon(current_page, total_pages, width=150, height=50):
 # Example Usage
 icon = create_page_status_icon(1, 5)
 icon.show()  # Opens image preview
-icon.save("page_status.png")  # Saves as a PNG file
+icon.save("page_status.jpg")  # Saves as a PNG file
