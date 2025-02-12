@@ -8,7 +8,6 @@ import logging
 from streamdeck import initialize_streamdeck
 from config import BASE_DIR
 from ableton import ableton, ABLETON_SET_PATH
-from convert import convert_to_png
 
 # Get the script's actual location (the LiveDeck project root)
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
