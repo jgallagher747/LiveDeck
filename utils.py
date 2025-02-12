@@ -1,3 +1,5 @@
+# --- utils.py ---
+
 import os
 from PIL import Image, ImageDraw, ImageFont
 from StreamDeck.ImageHelpers import PILHelper
@@ -51,3 +53,11 @@ def log(message):
         message (str): Message to log.
     """
     print(f"[LOG] {message}")
+
+def get_artwork_path(filename):
+    """Helper function to get correct artwork path"""
+    return os.path.join('assets/artwork', filename)
+
+def ensure_artwork_dir():
+    """Helper function to ensure artwork directory exists"""
+    os.makedirs('assets/artwork', exist_ok=True)

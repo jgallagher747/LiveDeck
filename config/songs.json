@@ -1,60 +1,172 @@
 {
-    "songs": [
-        {
-            "id": 1,
-            "title": "Song One",
-            "album": "Album A",
-            "image": "assets/song_one.png",
-            "ableton_track": 0
-        },
-        {
-            "id": 2,
-            "title": "Song Two",
-            "album": "Album B",
-            "image": "assets/song_two.png",
-            "ableton_track": 1
-        },
-        {
-            "id": 3,
-            "title": "Song Three",
-            "album": "Album C",
-            "image": "assets/song_three.png",
-            "ableton_track": 2
-        },
-        {
-            "id": 4,
-            "title": "Song Four",
-            "album": "Album D",
-            "image": "assets/song_four.png",
-            "ableton_track": 3
-        },
-        {
-            "id": 5,
-            "title": "Song Five",
-            "album": "Album E",
-            "image": "assets/song_five.png",
-            "ableton_track": 4
-        },
-        {
-            "id": 6,
-            "title": "Song Six",
-            "album": "Album F",
-            "image": "assets/song_six.png",
-            "ableton_track": 5
-        },
-        {
-            "id": 7,
-            "title": "Song Seven",
-            "album": "Album G",
-            "image": "assets/song_seven.png",
-            "ableton_track": 6
-        },
-        {
-            "id": 8,
-            "title": "Song Eight",
-            "album": "Album H",
-            "image": "assets/song_eight.png",
-            "ableton_track": 7
-        }
-    ]
-}
+  "songs": [
+    {
+      "id": 1,
+      "title": "Lean On Me",
+      "artist": "Bill Withers",
+      "album": "The Best Of Bill Withers: Lean On Me",
+      "image": "assets/artwork/Lean On Me.jpg",
+      "ableton_track": 0
+    },
+    {
+      "id": 2,
+      "title": "Holy (feat. Chance the Rapper)",
+      "artist": "Justin Bieber",
+      "album": "Holy (feat. Chance the Rapper) - Single",
+      "image": "assets/artwork/Holy (feat. Chance the Rapper) - Single.jpg",
+      "ableton_track": 1
+    },
+    {
+      "id": 3,
+      "title": "Gratitude",
+      "artist": "Brandon Lake",
+      "album": "House of Miracles",
+      "image": "assets/artwork/Gratitude.jpg",
+      "ableton_track": 2
+    },
+    {
+      "id": 4,
+      "title": "Smile",
+      "artist": "Morgan Wallen",
+      "album": "Smile - Single",
+      "image": "assets/artwork/Smile.jpg",
+      "ableton_track": 3
+    },
+    {
+      "id": 5,
+      "title": "Burn",
+      "artist": "Ray LaMontagne",
+      "album": "Trouble",
+      "image": "assets/artwork/Burn.jpg",
+      "ableton_track": 4
+    },
+    {
+      "id": 6,
+      "title": "One Lovely Day",
+      "artist": "Citizen Cope",
+      "album": "One Lovely Day",
+      "image": "assets/artwork/One Lovely Day.jpg",
+      "ableton_track": 5
+    },
+    {
+      "id": 7,
+      "title": "Banana Pancakes",
+      "artist": "Jack Johnson",
+      "album": "In Between Dreams",
+      "image": "assets/artwork/Banana Pancakes.jpg",
+      "ableton_track": 6
+    },
+    {
+      "id": 8,
+      "title": "Take Me Home, Country Roads (Original Version)",
+      "artist": "John Denver",
+      "album": "Poems, Prayers & Promises",
+      "image": "assets/artwork/Take Me Home, Country Roads (Original Version).jpg",
+      "ableton_track": 7
+    },
+    {
+      "id": 9,
+      "title": "Here Comes the Sun",
+      "artist": "The Beatles",
+      "album": "Abbey Road (Remastered)",
+      "image": "assets/artwork/Here Comes the Sun.jpg",
+      "ableton_track": 8
+    },
+    {
+      "id": 10,
+      "title": "Neon (Live)",
+      "artist": "John Mayer",
+      "album": "Where the Light Is: John Mayer Live in Los Angeles",
+      "image": "assets/artwork/Neon (Live).jpg",
+      "ableton_track": 9
+    },
+    {
+      "id": 11,
+      "title": "Don't Think Twice, It's All Right",
+      "artist": "Bob Dylan",
+      "album": "The Freewheelin' Bob Dylan",
+      "image": "assets/artwork/Don't Think Twice, It's All Right.jpg",
+      "ableton_track": 10
+    },
+    {
+      "id": 12,
+      "title": "I Will Wait",
+      "artist": "Mumford & Sons",
+      "album": "Babel (Deluxe Version)",
+      "image": "assets/artwork/I Will Wait.jpg",
+      "ableton_track": 11
+    },
+    {
+      "id": 13,
+      "title": "I'm Yours",
+      "artist": "Jason Mraz",
+      "album": "I'm Yours",
+      "image": "assets/artwork/I'm Yours.jpg",
+      "ableton_track": 12
+    },
+    {
+      "id": 14,
+      "title": "Something",
+      "artist": "The Beatles",
+      "album": "Abbey Road (Remastered)",
+      "image": "assets/artwork/Something.jpg",
+      "ableton_track": 13
+    },
+    {
+      "id": 15,
+      "title": "The Sound of Silence",
+      "artist": "Simon & Garfunkel",
+      "album": "Sound of Silence",
+      "image": "assets/artwork/The Sound of Silence.jpg",
+      "ableton_track": 14
+    },
+    {
+      "id": 16,
+      "title": "Ain't No Sunshine",
+      "artist": "Bill Withers",
+      "album": "Just As I Am",
+      "image": "assets/artwork/Ain't No Sunshine.jpg",
+      "ableton_track": 15
+    },
+    {
+      "id": 17,
+      "title": "Don't Panic",
+      "artist": "Coldplay",
+      "album": "Parachutes",
+      "image": "assets/artwork/Don't Panic.jpg",
+      "ableton_track": 16
+    },
+    {
+      "id": 18,
+      "title": "Chicago",
+      "artist": "Sufjan Stevens",
+      "album": "Illinois",
+      "image": "assets/artwork/Chicago.jpg",
+      "ableton_track": 17
+    },
+    {
+      "id": 19,
+      "title": "Karma",
+      "artist": "AJR",
+      "album": "Neotheater",
+      "image": "assets/artwork/Karma.jpg",
+      "ableton_track": 18
+    },
+    {
+      "id": 20,
+      "title": "Norwegian Wood (This Bird Has Flown)",
+      "artist": "The Beatles",
+      "album": "Rubber Soul",
+      "image": "assets/artwork/Norwegian Wood (This Bird Has Flown).jpg",
+      "ableton_track": 19
+    },
+    {
+      "id": 21,
+      "title": "Blackbird",
+      "artist": "The Beatles",
+      "album": "The Beatles (The White Album)",
+      "image": "assets/artwork/Blackbird.jpg",
+      "ableton_track": 20
+    }
+  ]
+} 

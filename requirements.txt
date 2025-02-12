@@ -1,5 +1,8 @@
+certifi==2025.1.31
+charset-normalizer==3.4.1
 docutils==0.21.2
 hidapi==0.14.0.post4
+idna==3.10
 importlib_metadata==8.6.1
 jpype1==1.5.2
 libusb==1.0.27.post3
@@ -7,8 +10,11 @@ live==0.0.3
 packaging==24.2
 pillow==11.1.0
 pkg_about==1.2.8
+psutil==6.1.1
 pylive==0.4.0
 python-osc==1.9.3
+requests==2.32.3
 setuptools==75.8.0
 streamdeck==0.9.6
+urllib3==2.3.0
 zipp==3.21.0
