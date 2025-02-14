@@ -60,6 +60,9 @@ def main():
     if not deck:
         logging.error("Failed to initialize Stream Deck. Exiting.")
         return
+    
+    # Pre-render all buttons
+    controller.pre_render_all_buttons(deck)
 
     # Register Controller's method as the callback for key events.
     deck.set_key_callback(lambda d, key, state: controller.handle_button_press(d, key, state))
