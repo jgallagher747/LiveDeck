@@ -10,7 +10,6 @@ from PIL import Image, ImageDraw, ImageFont
 from StreamDeck.DeviceManager import DeviceManager
 from StreamDeck.ImageHelpers import PILHelper
 from config import SONG_DB_PATH, load_json
-from controller import on_button_pressed, update_buttons
 
 logging.basicConfig(level=logging.INFO)
 
@@ -89,8 +88,8 @@ def initialize_streamdeck():
     deck = streamdecks[0]
     deck.open()
     logging.info(f"Connected to Stream Deck: {deck.deck_type()}")
-    update_buttons(deck)
-    deck.set_key_callback(on_button_pressed)
+    # Remove the call to update_buttons here.
+    # The main program should call controller.update_buttons(deck)
     logging.info("Stream Deck initialized successfully")
     return deck
 

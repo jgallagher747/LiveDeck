@@ -2,6 +2,8 @@ import os
 import json
 import logging
 import time
+import mido
+from midi import MIDI_NOTE_MAP
 from PIL import Image, ImageDraw, ImageFont
 from StreamDeck.ImageHelpers import PILHelper
 from ableton import play_track, stop_all
@@ -28,11 +30,24 @@ class Controller:
                 return tuple(key_size)
         return tuple(fmt)
 
-    def __init__(self):
+    def __init__(self, outport):
+        self.outport = outport
         self.song_data = load_json(SONG_DB_PATH).get("songs", [])
         self.current_page = 0
         logging.info("Loaded song data: %s", json.dumps(self.song_data, indent=2))
-        self.artwork_path = "assets/artwork"  # Update from "artwork" if it exists
+        self.artwork_path = "assets/artwork"
+
+    def send_midi_key(self, song_key):
+        """Convert song key to MIDI note and send it."""
+        if song_key in MIDI_NOTE_MAP:
+            note = MIDI_NOTE_MAP[song_key] -1
+            msg = mido.Message("note_on", note=note + 1, velocity=64)
+            self.outport.send(msg)
+            time.sleep(0.3)
+            self.outport.send(mido.Message("note_off", note=note + 1, velocity=64))
+            logging.info(f"Sent MIDI note {note + 1} for key {song_key}")
+        else:
+            logging.warning(f"Invalid song key: {song_key}")
 
     def render_button(self, deck, song):
         """Generate a button image for a song."""
@@ -126,13 +141,5 @@ class Controller:
                 logging.info("Playing song: %s", song.get("title", "Unknown"))
                 stop_all()
                 play_track(song.get("ableton_track"))
+                self.send_midi_key(song.get("key"))
                 self.update_buttons(deck)
-
-# Singleton instance for callbacks
-controller = Controller()
-
-def update_buttons(deck):
-    controller.update_buttons(deck)
-
-def on_button_pressed(deck, key, state):
-    controller.handle_button_press(deck, key, state)

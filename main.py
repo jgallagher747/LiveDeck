@@ -5,6 +5,10 @@
 import time
 import os
 import logging
+import mido
+import threading
+from midi import forward_midi
+from controller import Controller
 from streamdeck import initialize_streamdeck
 from config import BASE_DIR
 from ableton import ableton, ABLETON_SET_PATH
@@ -13,31 +17,39 @@ from ableton import ableton, ABLETON_SET_PATH
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 os.chdir(BASE_DIR)
 
-# Update any direct artwork path references
-ARTWORK_PATH = "assets/artwork"  # Update from "artwork" if it exists
+ARTWORK_PATH = "assets/artwork"  # Update if needed
 
 def init():
     os.makedirs(ARTWORK_PATH, exist_ok=True)
-    # ... rest of initialization ...
+
+def init_midi_outport():
+    midi_output_name = "IAC Driver Bus 2"  # Adjust as needed
+    return mido.open_output(midi_output_name)
 
 def main():
     """Main function that initializes and runs the LiveDeck application."""
-    # Set working directory
+
+    # Start the MIDI forwarding loop in a daemon thread
+    midi_thread = threading.Thread(target=forward_midi, daemon=True)
+    midi_thread.start()
+
     os.chdir(BASE_DIR)
     
-    # Initialize logging
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
-
+    
+    # Initialize the MIDI output port and create a Controller instance with it
+    outport = init_midi_outport()
+    controller = Controller(outport)
+    
     # Launch and connect to Ableton
     logging.info("Initializing Ableton Live...")
     if not ableton.launch_set(ABLETON_SET_PATH):
         logging.error("Failed to launch Ableton Live. Exiting.")
         return
         
-    # Connect to the Ableton set
     if not ableton.connect_to_set():
         logging.error("Failed to connect to Ableton Live set. Exiting.")
         return
@@ -48,11 +60,15 @@ def main():
     if not deck:
         logging.error("Failed to initialize Stream Deck. Exiting.")
         return
+
+    # Register Controller's method as the callback for key events.
+    deck.set_key_callback(lambda d, key, state: controller.handle_button_press(d, key, state))
+    controller.update_buttons(deck)
     
     try:
         logging.info("LiveDeck running. Press Ctrl+C to exit.")
         while True:
-            time.sleep(1)  # Keep script running efficiently
+            time.sleep(1)
     except KeyboardInterrupt:
         logging.info("Shutting down LiveDeck...")
         deck.reset()
