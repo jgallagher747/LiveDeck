@@ -6,6 +6,7 @@
       "artist": "Bill Withers",
       "album": "The Best Of Bill Withers: Lean On Me",
       "image": "assets/artwork/Lean On Me.jpg",
+      "key": "C",
       "ableton_track": 0
     },
     {
@@ -14,6 +15,7 @@
       "artist": "Justin Bieber",
       "album": "Holy (feat. Chance the Rapper) - Single",
       "image": "assets/artwork/Holy (feat. Chance the Rapper) - Single.jpg",
+      "key": "F#",
       "ableton_track": 1
     },
     {
@@ -22,6 +24,7 @@
       "artist": "Brandon Lake",
       "album": "House of Miracles",
       "image": "assets/artwork/Gratitude.jpg",
+      "key": "B",
       "ableton_track": 2
     },
     {
@@ -30,6 +33,7 @@
       "artist": "Morgan Wallen",
       "album": "Smile - Single",
       "image": "assets/artwork/Smile.jpg",
+      "key": "B",
       "ableton_track": 3
     },
     {
@@ -38,6 +42,7 @@
       "artist": "Ray LaMontagne",
       "album": "Trouble",
       "image": "assets/artwork/Burn.jpg",
+      "key": "C",
       "ableton_track": 4
     },
     {
@@ -46,6 +51,7 @@
       "artist": "Citizen Cope",
       "album": "One Lovely Day",
       "image": "assets/artwork/One Lovely Day.jpg",
+      "key": "G",
       "ableton_track": 5
     },
     {
@@ -54,6 +60,7 @@
       "artist": "Jack Johnson",
       "album": "In Between Dreams",
       "image": "assets/artwork/Banana Pancakes.jpg",
+      "key": "G",
       "ableton_track": 6
     },
     {
@@ -62,6 +69,7 @@
       "artist": "John Denver",
       "album": "Poems, Prayers & Promises",
       "image": "assets/artwork/Take Me Home, Country Roads (Original Version).jpg",
+      "key": "A",
       "ableton_track": 7
     },
     {
@@ -70,6 +78,7 @@
       "artist": "The Beatles",
       "album": "Abbey Road (Remastered)",
       "image": "assets/artwork/Here Comes the Sun.jpg",
+      "key": "A",
       "ableton_track": 8
     },
     {
@@ -78,6 +87,7 @@
       "artist": "John Mayer",
       "album": "Where the Light Is: John Mayer Live in Los Angeles",
       "image": "assets/artwork/Neon (Live).jpg",
+      "key": "E",
       "ableton_track": 9
     },
     {
@@ -86,6 +96,7 @@
       "artist": "Bob Dylan",
       "album": "The Freewheelin' Bob Dylan",
       "image": "assets/artwork/Don't Think Twice, It's All Right.jpg",
+      "key": "E",
       "ableton_track": 10
     },
     {
@@ -94,6 +105,7 @@
       "artist": "Mumford & Sons",
       "album": "Babel (Deluxe Version)",
       "image": "assets/artwork/I Will Wait.jpg",
+      "key": "A",
       "ableton_track": 11
     },
     {
@@ -102,6 +114,7 @@
       "artist": "Jason Mraz",
       "album": "I'm Yours",
       "image": "assets/artwork/I'm Yours.jpg",
+      "key": "B",
       "ableton_track": 12
     },
     {
@@ -110,6 +123,7 @@
       "artist": "The Beatles",
       "album": "Abbey Road (Remastered)",
       "image": "assets/artwork/Something.jpg",
+      "key": "C",
       "ableton_track": 13
     },
     {
@@ -118,6 +132,7 @@
       "artist": "Simon & Garfunkel",
       "album": "Sound of Silence",
       "image": "assets/artwork/The Sound of Silence.jpg",
+      "key": "Em",
       "ableton_track": 14
     },
     {
@@ -126,6 +141,7 @@
       "artist": "Bill Withers",
       "album": "Just As I Am",
       "image": "assets/artwork/Ain't No Sunshine.jpg",
+      "key": "Am",
       "ableton_track": 15
     },
     {
@@ -134,6 +150,7 @@
       "artist": "Coldplay",
       "album": "Parachutes",
       "image": "assets/artwork/Don't Panic.jpg",
+      "key": "F",
       "ableton_track": 16
     },
     {
@@ -142,6 +159,7 @@
       "artist": "Sufjan Stevens",
       "album": "Illinois",
       "image": "assets/artwork/Chicago.jpg",
+      "key": "E",
       "ableton_track": 17
     },
     {
@@ -150,6 +168,7 @@
       "artist": "AJR",
       "album": "Neotheater",
       "image": "assets/artwork/Karma.jpg",
+      "key": "C",
       "ableton_track": 18
     },
     {
@@ -158,6 +177,7 @@
       "artist": "The Beatles",
       "album": "Rubber Soul",
       "image": "assets/artwork/Norwegian Wood (This Bird Has Flown).jpg",
+      "key": "D",
       "ableton_track": 19
     },
     {
@@ -166,7 +186,8 @@
       "artist": "The Beatles",
       "album": "The Beatles (The White Album)",
       "image": "assets/artwork/Blackbird.jpg",
+      "key": "G",
       "ableton_track": 20
     }
   ]
-} 
+}
