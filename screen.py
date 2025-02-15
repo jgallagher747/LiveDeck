@@ -169,7 +169,7 @@ class InfoBar:
                 if now - last_update_time >= 1:
                     self.update()
                     last_update_time = now
-                time.sleep(0.016)  # ~60 FPS for responsiveness
+                time.sleep(0.032)  # ~30 FPS
         except KeyboardInterrupt:
             print("\nExiting InfoBar update loop...")
             self.deck.reset()
