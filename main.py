@@ -64,6 +64,9 @@ def main():
     # Pre-render all buttons
     controller.pre_render_all_buttons(deck)
 
+    # Start info bar update loop
+    controller.start_info_bar_update(deck)
+
     # Register Controller's method as the callback for key events.
     deck.set_key_callback(lambda d, key, state: controller.handle_button_press(d, key, state))
     controller.update_buttons(deck)

@@ -1,4 +1,4 @@
-# midi.py
+# --- midi.py ---
 
 import mido
 import logging

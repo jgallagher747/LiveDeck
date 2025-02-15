@@ -1,10 +1,14 @@
+# --- controller.py ---
+
 import os
 import json
 import logging
 import time
 import mido
+import threading
 from PIL import Image, ImageDraw, ImageFont
 from StreamDeck.ImageHelpers import PILHelper
+from screen import InfoBar
 from ableton import play_track, stop_all
 from config import BASE_DIR, SONG_DB_PATH, load_json
 
@@ -43,6 +47,25 @@ class Controller:
         self.artwork_path = "assets/artwork"
         self.font_path = os.path.join(BASE_DIR, "assets", "DepartureMono-Regular.otf")
         self.font = ImageFont.truetype(self.font_path, 14)
+        self.info_bar = None
+
+    def initialize_info_bar(self, deck):
+        """
+        Initialize the InfoBar instance and update it immediately.
+        """
+        total_pages = (len(self.song_data) + Controller.SONGS_PER_PAGE - 1) // Controller.SONGS_PER_PAGE
+        self.info_bar = InfoBar(deck, total_pages, self.current_page)
+        self.info_bar.update()
+
+    def start_info_bar_update(self, deck):
+        """
+        Starts the info bar update loop in a separate daemon thread.
+        This will continuously update the info bar on startup.
+        """
+        if self.info_bar is None:
+            self.initialize_info_bar(deck)
+        thread = threading.Thread(target=self.info_bar.run_loop, daemon=True)
+        thread.start()
 
     def load_icon(self, icon_path, key_size):
         """Load an icon from disk using cache."""
@@ -109,6 +132,12 @@ class Controller:
         key_size = Controller.get_key_size(deck)
         total_pages = (len(self.song_data) + Controller.SONGS_PER_PAGE - 1) // Controller.SONGS_PER_PAGE
         start_index = self.current_page * Controller.SONGS_PER_PAGE
+
+        # Update info bar
+        if self.info_bar is None:
+            self.initialize_info_bar(deck)
+        else:
+            self.info_bar.set_page(self.current_page, total_pages)
 
         # Update song buttons (keys 0-6)
         for key in range(Controller.SONGS_PER_PAGE):
