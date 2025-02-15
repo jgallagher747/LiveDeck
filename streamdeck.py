@@ -100,4 +100,4 @@ if __name__ == "__main__":
     if deck:
         logging.info("Listening for Stream Deck events...")
         while True:
-            pass
+            time.sleep(0.1)

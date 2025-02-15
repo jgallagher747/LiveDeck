@@ -1,6 +1,7 @@
 # --- midi.py ---
 
 import mido
+import time
 import logging
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -52,6 +53,7 @@ def forward_midi():
                                 logging.info("Ignored: %s", msg.note)
                         else:
                             outport.send(msg)  # Forward non-note messages
+                time.sleep(0.1)            
     except KeyboardInterrupt:
         logging.info("MIDI Routing Stopped")
 
