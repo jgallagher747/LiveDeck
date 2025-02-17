@@ -36,7 +36,7 @@ class AbletonConnection:
     
     def is_ableton_running(self):
         """Check if Ableton Live is already running"""
-        return any('Ableton Live' in p.name() for p in psutil.process_iter(['name']))
+        return any('Live' in p.name() for p in psutil.process_iter(['name']))
     
     def launch_set(self, set_path):
         """
