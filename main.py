@@ -7,6 +7,7 @@ import os
 import logging
 import mido
 import threading
+import console
 from midi import forward_midi
 from controller import Controller
 from streamdeck import initialize_streamdeck
@@ -64,8 +65,12 @@ def main():
     # Pre-render all buttons
     controller.pre_render_all_buttons(deck)
 
+
     # Start info bar update loop
     controller.start_info_bar_update(deck)
+
+    # Launch UAD Console
+    console.uad_launch()
 
     # Register Controller's method as the callback for key events.
     deck.set_key_callback(lambda d, key, state: controller.handle_button_press(d, key, state))

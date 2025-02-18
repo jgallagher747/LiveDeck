@@ -106,6 +106,10 @@ class AbletonConnection:
                 return
         
         self.send_reset_osc()
+
+        if self.osc_client:
+            self.osc_client.send_message("/stop", 0)
+            logging.info("Sent OSC stop command to Max for Live.")
         
         try:
             track = self.ableton_set.tracks[track_index]
