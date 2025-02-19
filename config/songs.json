@@ -188,6 +188,60 @@
       "image": "assets/artwork/Blackbird.jpg",
       "key": "G",
       "ableton_track": 20
+    },
+    {
+      "id": 22,
+      "title": "(Sittin' On) The Dock of the Bay",
+      "artist": "Otis Redding",
+      "album": "Dock of the Bay - Single",
+      "image": "assets/artwork/(Sittin' On) The Dock of the Bay.jpg",
+      "key": "G",
+      "ableton_track": 21
+    },
+    {
+      "id": 23,
+      "title": "Georgia on My Mind",
+      "artist": "Ray Charles",
+      "album": "Georgia on My Mind",
+      "image": "assets/artwork/Georgia on My Mind.jpg",
+      "key": "F",
+      "ableton_track": 22
+    },
+    {
+      "id": 24,
+      "title": "Such Great Heights",
+      "artist": "Iron & Wine",
+      "album": "Around the Well",
+      "image": "assets/artwork/Such Great Heights.jpg",
+      "key": "F#",
+      "ableton_track": 23
+    },
+    {
+      "id": 25,
+      "title": "Folsom Prison Blues",
+      "artist": "Johnny Cash",
+      "album": "With His Hot and Blue Guitar",
+      "image": "assets/artwork/Folsom Prison Blues.jpg",
+      "key": "E",
+      "ableton_track": 24
+    },
+    {
+      "id": 26,
+      "title": "What a Wonderful World",
+      "artist": "Louis Armstrong",
+      "album": "What a Wonderful World",
+      "image": "assets/artwork/What a Wonderful World.jpg",
+      "key": "F",
+      "ableton_track": 25
+    },
+    {
+      "id": 27,
+      "title": "You've Got a Friend In Me",
+      "artist": "Randy Newman",
+      "album": "Toy Story (Original Motion Picture Soundtrack)",
+      "image": "assets/artwork/You've Got a Friend In Me.jpg",
+      "key": "D#",
+      "ableton_track": 26
     }
   ]
 }

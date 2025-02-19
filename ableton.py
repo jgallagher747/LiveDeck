@@ -56,6 +56,8 @@ class AbletonConnection:
         if self.is_ableton_running():
             self.is_connected = True
             logging.info("Ableton Live is already running")
+            # Add delay to ensure Ableton is fully loaded
+            time.sleep(3)
             return True
         
         # Ensure the path exists
@@ -67,17 +69,20 @@ class AbletonConnection:
             logging.info("Launching Ableton Live...")
             subprocess.Popen(['open', set_path])
             
-            # Quick check for first 3 seconds
-            for _ in range(5):
+            # Increase wait time for Ableton to launch (up to 30 seconds)
+            for _ in range(30):
                 if self.is_ableton_running():
+                    logging.info("Ableton Live process detected, waiting for full initialization...")
+                    # Add additional delay after process is detected
+                    time.sleep(5)
                     self.is_connected = True
                     logging.info("Ableton Live launched successfully")
                     return True
                 time.sleep(1)
-                
-            logging.warning("Ableton Live launch taking longer than expected, continuing anyway")
-            self.is_connected = True
-            return True
+                logging.info("Waiting for Ableton Live to launch...")
+            
+            logging.warning("Ableton Live launch timeout reached")
+            return False
             
         except Exception as e:
             logging.error(f"Error launching Ableton Live: {e}")
@@ -85,13 +90,26 @@ class AbletonConnection:
     
     def connect_to_set(self):
         """Initialize connection to Ableton Live set"""
-        try:
-            self.ableton_set = Set(scan=True)
-            logging.info("Connected to Ableton Live set")
-            return True
-        except Exception as e:
-            logging.error(f"Error connecting to Ableton Live set: {e}")
-            return False
+        max_attempts = 3
+        attempt = 0
+        
+        while attempt < max_attempts:
+            try:
+                logging.info(f"Attempting to connect to Ableton Live set (attempt {attempt + 1}/{max_attempts})")
+                self.ableton_set = Set(scan=True)
+                # Add delay after successful connection
+                time.sleep(2)
+                logging.info("Connected to Ableton Live set")
+                return True
+            except Exception as e:
+                attempt += 1
+                logging.warning(f"Connection attempt {attempt} failed: {e}")
+                if attempt < max_attempts:
+                    # Wait between retry attempts
+                    time.sleep(5)
+                else:
+                    logging.error("Failed to connect to Ableton Live set after all attempts")
+                    return False
     
     def send_reset_osc(self):
         """Sends an OSC message to reset the playhead."""
